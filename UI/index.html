@@ -4,16 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>simple pop up</title>
+    <link rel="stylesheet" href="bone.css">
+    <title>Taskel</title>
 </head>
 <body>
-    <div id="yet">
-
+    <div id="sidebar">
+        <h1>Taskel</h1>
+        <p>ここに操作ボタンや設定が表示されます。</p>
+        <div id="add_task_button">add Task</div>
     </div>
-    <div id="done">
-
+    <div id="content">
+        <h1>メインコンテンツ</h1>
+        <p>ここにメインのコンテンツが表示されます。操作パネルの左側に配置されています。</p>
+        <div id="yet">
+        
+        </div>
+        <div id="done">
+        
+        </div>
     </div>
-    <div id="add_task_button">add Task</div>
 
     <!--オーバーレイ-->
     <div class="overlay" id="add_task">
@@ -29,7 +38,7 @@
                 <div>
                     <label for="task_info">詳細</label>
                 </div>
-                <textarea name="task_info" id="task_info" cols="30" rows="10"></textarea>
+                <textarea name="task_info" id="task_info" cols="30" rows="5"></textarea>
             </div>
             <button id="closeBtn">閉じる</button>
         </div>
