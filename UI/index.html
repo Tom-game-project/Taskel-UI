@@ -3,24 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="overlay.css">
     <link rel="stylesheet" href="bone.css">
+    <link rel="stylesheet" href="bar.css">
     <title>Taskel</title>
 </head>
 <body>
     <div id="sidebar">
         <h1>Taskel</h1>
-        <p>ここに操作ボタンや設定が表示されます。</p>
+        <p>タスク管理のための便利ツール</p>
         <div id="add_task_button">add Task</div>
     </div>
     <div id="content">
-        <h1>メインコンテンツ</h1>
-        <p>ここにメインのコンテンツが表示されます。操作パネルの左側に配置されています。</p>
-        <div id="yet">
-        
+        <div class="task_showcase" id="yet">
+            <h2>Yet</h2>
+            <div class="task_container">
+                <div class="task">
+                    <h3 class="task_title">
+                        Title
+                    </h3>
+                    <div id="Task_memo">
+                        ここに詳細が表示されます
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="done">
-        
+        <div class="task_showcase" id="done">
+            <h2>Done</h2>
+            <div class="task_container">
+                <div class="task">
+                    <h3 class="task_title">
+                        Title
+                    </h3>
+                    <div id="Task_memo">
+                        ここに詳細が表示されます
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -30,17 +49,20 @@
             <h2>新規予定</h2>
             <div>
                 <div>
-                    <label for="task_title">タイトル</label>
+                    <label for="ask_task_title">タイトル</label>
                 </div>
-                <input type="text" name="task_title" id="task_title">
+                <input type="text" name="ask_task_title" id="ask_task_title">
             </div>
             <div>
                 <div>
-                    <label for="task_info">詳細</label>
+                    <label for="ask_task_info">詳細</label>
                 </div>
-                <textarea name="task_info" id="task_info" cols="30" rows="5"></textarea>
+                <textarea name="ask_task_info" id="ask_task_info" cols="30" rows="5"></textarea>
             </div>
-            <button id="closeBtn">閉じる</button>
+            <div>
+                <button id="closeBtn">閉じる</button>
+                <button onclick="">追加</button>
+            </div>
         </div>
     </div>
     <script src="script.js" type="text/javascript"></script>

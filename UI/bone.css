@@ -13,8 +13,34 @@ body {
 }
 
 #content {
+    display: flex;
+    flex-grow: 1;
+    min-height: calc(100vh);
+    /* コンテンツが少ない場合でも最小の高さを確保 */
+}
+
+.task_showcase{
     flex-grow: 1;
     min-height: calc(100vh - 40px);
+    height: calc(100vh - 40px);
     /* コンテンツが少ない場合でも最小の高さを確保 */
     padding: 20px;
+}
+
+#yet{
+    overflow-y: scroll;
+}
+
+#done{
+    overflow-y: scroll;
+}
+
+
+
+.task{
+    background-color: #fff;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
