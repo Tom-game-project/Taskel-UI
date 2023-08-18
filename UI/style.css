@@ -1,3 +1,18 @@
+#add_task_button {
+  cursor: pointer;
+  background-color: aqua;
+  color: black;
+  border-radius: 10px;
+  text-align: center;
+  padding: 5px 5px;
+  width: 100px;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#add_task_button:hover {
+  background-color: rgb(0, 164, 164);
+}
+
 .overlay {
   position: fixed;
   top: 0;
@@ -15,6 +30,16 @@
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+#task_title{
+  width: 300px;
+}
+#task_info {
+  width: 300px;
+  /* 任意の幅を指定 */
+  resize: none;
+  /* ユーザーによるリサイズを無効化 */
 }
 
 #closeBtn {

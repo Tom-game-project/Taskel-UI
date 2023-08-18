@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +7,23 @@
     <title>simple pop up</title>
 </head>
 <body>
-    <div id="openBtn">open</div>
-    <div class="overlay" id="overlay">
+    <div id="add_task_button">add Task</div>
+
+    <div class="overlay" id="add_task">
         <div class="popup" id="popup">
-            <h2>ポップアップタイトル</h2>
-            <p>ポップアップコンテンツ</p>
+            <h2>新規予定</h2>
+            <div>
+                <div>
+                    <label for="task_title">タイトル</label>
+                </div>
+                <input type="text" name="task_title" id="task_title">
+            </div>
+            <div>
+                <div>
+                    <label for="task_info">詳細</label>
+                </div>
+                <textarea name="task_info" id="task_info" cols="30" rows="10"></textarea>
+            </div>
             <button id="closeBtn">閉じる</button>
         </div>
     </div>
