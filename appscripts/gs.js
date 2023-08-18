@@ -6,7 +6,7 @@ function doGet() {
 //function の例
 function readWriteSpreadsheet() {
     // スプレッドシートのIDを指定
-    var spreadsheetId = '1sfp2IQksE4VDz9cdVsdfJkwn_QHszeD8J6zWBM8dxdE';
+    var spreadsheetId = '';
     // スプレッドシートを開く
     var spreadsheet = SpreadsheetApp.openById(spreadsheetId);
 
