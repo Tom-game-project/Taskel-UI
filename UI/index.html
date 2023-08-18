@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskel</title>
+</head>
+<body>
+    <div id="yet">
+        
+        <div class="yet_data">
+
+        </div>
+    </div>
+    <div id="done">
+        <div id="done_data">
+
+        </div>
+    </div>
+    <script type="text/javascript">
+        function search(){
+            google.script.run.withSuccessHandler(example_return).example(
+                "msg from client"
+            );
+        }
+
+        function example_return(ret) {
+                // サーバーサイド関数の戻り値を使用する処理
+                // サーバーサイド関数の戻り値が表示される
+                console.log("予想 :", ret);
+        }
+    </script>
+</body>
+</html>
