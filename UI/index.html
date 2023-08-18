@@ -25,6 +25,12 @@
                     <div id="task_memo">
                         ここに詳細が表示されます
                     </div>
+                    <div class="task_ope">
+                        <!--buttonを配置-->
+                        <button >edit</button>
+                        <button >delete</button>
+                        <button >Done!</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -54,7 +60,14 @@
                 <input type="text" name="ask_task_title" id="ask_task_title">
             </div>
             <div>
-                input
+                <div>
+                    <label for="ask_task_date">デッドライン</label>
+                </div>
+                <input type="date" name="ask_task_date" id="ask_task_date">
+                <select name="hh" id="hh">
+                </select>
+                <select name="mm" id="mm">
+                </select>
             </div>
             <div>
                 <div>
@@ -64,10 +77,11 @@
             </div>
             <div>
                 <button id="closeBtn">変更を破棄</button>
-                <button onclick="">追加</button>
+                <button id="addBtn">追加</button>
             </div>
         </div>
     </div>
+
     <script src="script.js" type="text/javascript"></script>
 </body>
 </html>

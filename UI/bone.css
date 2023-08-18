@@ -6,7 +6,7 @@ body {
 }
 
 #sidebar {
-    width: 300px;
+    width: 250px;
     background-color: #333;
     color: #fff;
     padding: 20px;
@@ -29,10 +29,12 @@ body {
 
 #yet{
     overflow-y: scroll;
+    overflow-x: auto;
 }
 
 #done{
     overflow-y: scroll;
+    overflow-x: auto;
 }
 
 
@@ -43,4 +45,15 @@ body {
     margin: 5px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    width: 500px;
+}
+
+.task p {
+    white-space: pre-wrap;
+}
+
+.task_ope{
+    display:flex;
+    justify-content: flex-end;
 }
