@@ -47,7 +47,14 @@ function addbutton_onclick(){
     const select_hh = document.getElementById("hh");
     const select_mm = document.getElementById("mm");
     const ask_task_memo = document.getElementById("ask_task_info");
-
+    //各入力欄は必ず埋めなければならない
+    //入力に欠けがあった場合errorみたいなものを出してuserに伝える
+    if (ask_task_date.value.length===0){
+        console.log("dateはnull")
+    }else{
+        console.log("dateはnullではない")
+    }
+    console.log(ask_task_date.value)
 }
 
 
@@ -97,6 +104,12 @@ function main(){
         \nダミー`,
         10
     )
+
+    const ask_task_title = document.getElementById("ask_task_title");
+    const ask_task_date = document.getElementById("ask_task_date");
+    const select_hh = document.getElementById("hh");
+    const select_mm = document.getElementById("mm");
+    const ask_task_memo = document.getElementById("ask_task_info");
     console.log("ask_task_title",ask_task_title.value)
     console.log("ask_task_date",ask_task_date.value)
     console.log("select_hh",select_hh.value)
