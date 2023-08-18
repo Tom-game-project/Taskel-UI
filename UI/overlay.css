@@ -29,9 +29,6 @@
   /* ユーザーによるリサイズを無効化 */
 }
 
-#closeBtn {
-  margin-top: 10px;
-}
 
 input[type="text"] {
   font-size: 24px;
@@ -39,3 +36,9 @@ input[type="text"] {
 textarea{
   font-size: 24px;
 }
+
+#overlay_ope{
+  display: flex;
+  justify-content: flex-end;
+}
+
