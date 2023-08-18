@@ -1,34 +1,20 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taskel</title>
+    <link rel="stylesheet" href="style.css">
+    <title>simple pop up</title>
 </head>
 <body>
-    <div id="yet">
-        
-        <div class="yet_data">
-
+    <div id="openBtn">open</div>
+    <div class="overlay" id="overlay">
+        <div class="popup" id="popup">
+            <h2>ポップアップタイトル</h2>
+            <p>ポップアップコンテンツ</p>
+            <button id="closeBtn">閉じる</button>
         </div>
     </div>
-    <div id="done">
-        <div id="done_data">
-
-        </div>
-    </div>
-    <script type="text/javascript">
-        function search(){
-            google.script.run.withSuccessHandler(example_return).example(
-                "msg from client"
-            );
-        }
-
-        function example_return(ret) {
-                // サーバーサイド関数の戻り値を使用する処理
-                // サーバーサイド関数の戻り値が表示される
-                console.log("予想 :", ret);
-        }
-    </script>
+    <script src="script.js" type="text/javascript"></script>
 </body>
 </html>
