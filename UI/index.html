@@ -17,12 +17,12 @@
     <div id="content">
         <div class="task_showcase" id="yet">
             <h2>Yet</h2>
-            <div class="task_container">
+            <div class="task_container" id="yet_container">
                 <div class="task">
                     <h3 class="task_title">
                         Title
                     </h3>
-                    <div id="Task_memo">
+                    <div id="task_memo">
                         ここに詳細が表示されます
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                     <h3 class="task_title">
                         Title
                     </h3>
-                    <div id="Task_memo">
+                    <div id="task_memo">
                         ここに詳細が表示されます
                     </div>
                 </div>
@@ -54,13 +54,16 @@
                 <input type="text" name="ask_task_title" id="ask_task_title">
             </div>
             <div>
+                input
+            </div>
+            <div>
                 <div>
                     <label for="ask_task_info">詳細</label>
                 </div>
                 <textarea name="ask_task_info" id="ask_task_info" cols="30" rows="5"></textarea>
             </div>
             <div>
-                <button id="closeBtn">閉じる</button>
+                <button id="closeBtn">変更を破棄</button>
                 <button onclick="">追加</button>
             </div>
         </div>
