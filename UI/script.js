@@ -38,9 +38,8 @@ function set_hh_mm_options() {
 //eventlistener
 
 
-/**
-## addbutton_onclick
-*/
+//on any event
+// addbutton_onclick
 function addbutton_onclick(){
     const ask_task_title = document.getElementById("ask_task_title");
     const ask_task_date = document.getElementById("ask_task_date");

@@ -12,3 +12,10 @@
 #add_task_button:hover {
     background-color: rgb(0, 164, 164);
 }
+
+
+/*authorをslidebarの一番下側に表示する*/
+#slidbar_author{
+    position: absolute;
+    bottom: 0;
+}
