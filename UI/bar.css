@@ -4,6 +4,7 @@
     color: black;
     border-radius: 5px;
     text-align: center;
+    margin: 20px;
     padding: 5px 5px;
     width: 100px;
     transition: cubic-bezier(0.075, 0.82, 0.165, 1);

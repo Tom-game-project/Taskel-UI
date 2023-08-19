@@ -5,17 +5,18 @@ const overlay = document.getElementById('add_task');
 
 
 openButton.addEventListener('click', () => {
-    overlay.style.display = 'flex';
+    overlay.style.display = 'flex';//ここで入力欄の初期化を行う
+    init_from();
 });
 
 closeButton.addEventListener('click', () => {
     overlay.style.display = 'none';
 });
 
-addButton.addEventListener('click',addbutton_onclick)
+addButton.addEventListener('click',addbutton_onclick);
 
 
-//html初期設定
+//#html初期設定
 function set_hh_mm_options() {
     const hh = document.getElementById("hh");
     const mm = document.getElementById("mm");
@@ -35,25 +36,79 @@ function set_hh_mm_options() {
     }
 }
 
-//eventlistener
+//#formの初期化
+/**
+# formの初期化
+ */
+function init_from(){
+
+    const ask_task_title = document.getElementById("ask_task_title");
+    const ask_task_date = document.getElementById("ask_task_date");
+    const select_hh = document.getElementById("hh");//この二つはデフォルトの入力が絶対にある
+    const select_mm = document.getElementById("mm");//この二つはデフォルトの入力が絶対にある
+    const ask_task_memo = document.getElementById("ask_task_info");
+
+    ask_task_title.value="";
+    ask_task_date.value = "";
+    select_hh.value="00";
+    select_mm.value="00";
+    ask_task_memo.value = "";
+
+    const error_msgs =document.getElementsByClassName("ask_error") ;
+    for (const elem of error_msgs){
+        console.log(elem);
+        elem.style.color="red";
+        elem.style.display="none";
+    }
+}
 
 
-//on any event
-// addbutton_onclick
+//#eventlistener
+//#on any event
+
+
+/**
+## addbutton_onclick
+### add buttonが押されたときの処理
+ */
 function addbutton_onclick(){
     const ask_task_title = document.getElementById("ask_task_title");
     const ask_task_date = document.getElementById("ask_task_date");
-    const select_hh = document.getElementById("hh");
-    const select_mm = document.getElementById("mm");
+    const select_hh = document.getElementById("hh");//この二つはデフォルトの入力が絶対にある
+    const select_mm = document.getElementById("mm");//この二つはデフォルトの入力が絶対にある
     const ask_task_memo = document.getElementById("ask_task_info");
     //各入力欄は必ず埋めなければならない
     //入力に欠けがあった場合errorみたいなものを出してuserに伝える
-    if (ask_task_date.value.length===0){
-        console.log("dateはnull")
-    }else{
-        console.log("dateはnullではない")
+    const ask_title_error = document.getElementById("ask_title_error");
+    const ask_deadline_error = document.getElementById("ask_deadline_error");
+
+    let error_flag = false;
+    if (ask_task_title.value.length===0){//タイトルが入力されていない
+        error_flag=true;
+        ask_title_error.style.display = "flex";
+    }else{//タイトルが入力されている
+        ask_title_error.style.display = "none";
     }
-    console.log(ask_task_date.value)
+    if (ask_task_date.value.length===0) {//日付が入力されていない
+        error_flag=true;
+        ask_deadline_error.style.display = "flex";
+    }else{//日付が入力されている
+        ask_deadline_error.style.display = "none";
+    }
+    if (ask_task_memo.value.length===0){//メモが入力されてない
+        
+    }else{//されてる
+    }
+
+    if (error_flag){
+        //errorがあればスルー
+    }else{
+        // errorがなければ
+        add_task(
+            ask_task_title.value,
+            ask_task_memo.value,
+        )
+    }
 }
 
 

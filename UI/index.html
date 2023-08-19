@@ -68,12 +68,15 @@
     <div class="overlay" id="add_task">
         <div class="popup" id="popup">
             <h2>新規予定😀</h2>
+            <!--title-->
             <div>
                 <div>
                     <label for="ask_task_title">タイトル</label>
                 </div>
                 <input type="text" name="ask_task_title" id="ask_task_title">
+                <div class="ask_error" id="ask_title_error">タイトルを入力してください</div>
             </div>
+            <!--deadline-->
             <div>
                 <div>
                     <label for="ask_task_date">デッドライン</label>
@@ -83,7 +86,9 @@
                 </select>
                 <select name="mm" id="mm">
                 </select>
+                <div class="ask_error" id="ask_deadline_error">日付を指定してください</div>
             </div>
+            <!--about task-->
             <div>
                 <div>
                     <label for="ask_task_info">詳細</label>
@@ -97,6 +102,7 @@
         </div>
     </div>
 
-    <script src="script.js" type="text/javascript"></script>
+    <script src="overlay.js" type="text/javascript"></script>
+    <script src="task.js" type="text/javascript"></script>
 </body>
 </html>
