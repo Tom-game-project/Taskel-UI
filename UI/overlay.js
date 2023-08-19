@@ -107,7 +107,8 @@ function addbutton_onclick(){
         add_task(
             ask_task_title.value,
             ask_task_memo.value,
-        )
+        );
+        overlay.style.display = 'none';//formを閉じる
     }
 }
 
@@ -138,6 +139,27 @@ function add_task(title, description,deadline){
     task_memo.setAttribute("class","task_memo");
     task_memo.textContent=description;
     task.appendChild(task_memo);
+
+    const edit_button =  document.createElement("button");
+    const delete_button =  document.createElement("button");
+    const done_button =  document.createElement("button");
+    
+    edit_button.textContent="Edit";
+    delete_button.textContent="Delete";
+    done_button.textContent="Done!";
+
+    const task_ope = document.createElement("div");
+    task_ope.setAttribute("class","task_ope")
+
+    edit_button.setAttribute("onclick","task_edit");
+    delete_button.setAttribute("onclick","task_delete");
+    done_button.setAttribute("onclick","task_done");
+
+    task_ope.appendChild(edit_button);
+    task_ope.appendChild(delete_button);
+    task_ope.appendChild(done_button);
+
+    task.appendChild(task_ope);
 
     yet_container.appendChild(task);
 }
