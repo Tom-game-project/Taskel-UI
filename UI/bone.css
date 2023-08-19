@@ -57,3 +57,27 @@ body {
     display:flex;
     justify-content: flex-end;
 }
+
+.task_ope_button{
+    cursor: pointer;
+    width: 100px;
+    text-align: center;
+    margin: 5px 5px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.task_ope_button:hover{
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.task_ope_button_edit{
+    background-color: aqua;
+}
+.task_ope_button_delete{
+    background-color: lightcoral;
+}
+.task_ope_button_done{
+    background-color: aquamarine;
+}

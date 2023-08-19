@@ -114,12 +114,12 @@ function addbutton_onclick(){
 
 
 /**
-## taskパネルの追加
-yet領域にtaskパネルを追加します
-@param {String} title
-@param {String} description
-deadlineはnumber型
-@param {Number} deadline
+ *## taskパネルの追加
+ *yet領域にtaskパネルを追加します
+ *@param {String} title
+ *@param {String} description
+ *deadlineはnumber型
+ *@param {Number} deadline
 */
 function add_task(title, description,deadline){
     const yet_container = document.getElementById("yet_container");
@@ -140,20 +140,31 @@ function add_task(title, description,deadline){
     task_memo.textContent=description;
     task.appendChild(task_memo);
 
-    const edit_button =  document.createElement("button");
-    const delete_button =  document.createElement("button");
-    const done_button =  document.createElement("button");
+    const edit_button =    document.createElement("div");
+    const delete_button =  document.createElement("div");
+    const done_button =    document.createElement("div");
     
     edit_button.textContent="Edit";
     delete_button.textContent="Delete";
     done_button.textContent="Done!";
 
+    edit_button.setAttribute("class", "task_ope_button task_ope_button_edit");
+    delete_button.setAttribute("class", "task_ope_button task_ope_button_delete");
+    done_button.setAttribute("class", "task_ope_button task_ope_button_done");
+
     const task_ope = document.createElement("div");
     task_ope.setAttribute("class","task_ope")
-
-    edit_button.setAttribute("onclick","task_edit");
-    delete_button.setAttribute("onclick","task_delete");
-    done_button.setAttribute("onclick","task_done");
+    
+    
+    edit_button.addEventListener("click",()=>{
+        task_edit();
+    });
+    delete_button.addEventListener("click",()=>{
+        task_delete();
+    });
+    done_button.addEventListener("click",()=>{
+        task_done();
+    });
 
     task_ope.appendChild(edit_button);
     task_ope.appendChild(delete_button);
