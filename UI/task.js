@@ -1,21 +1,22 @@
+//task event 
+
 /**
-## Task panel event
- */
-
-
+##task_done
+### taskをdone の方に移動させる
+*/
 function task_done() {
-
 }
 /**
-## Task panel event
+## task_delete
+### taskを削除する
  */
 function task_delete() {
-
+    
 }
 /**
-## Task panel event
+## task_edit
+### taskを編集し直す
  */
 function task_edit() {
-
 }
 
