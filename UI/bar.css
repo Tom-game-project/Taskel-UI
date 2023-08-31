@@ -1,4 +1,4 @@
-#add_task_button {
+.bar_button {
     cursor: pointer;
     background-color: aqua;
     color: black;
@@ -10,7 +10,7 @@
     transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-#add_task_button:hover {
+.bar_button:hover {
     background-color: rgb(0, 164, 164);
 }
 

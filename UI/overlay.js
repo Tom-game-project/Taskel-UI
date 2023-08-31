@@ -143,6 +143,40 @@ function add_task(title, description,deadline){
     const edit_button =    document.createElement("div");
     const delete_button =  document.createElement("div");
     const done_button =    document.createElement("div");
+    //トグルボタン
+    const run_toggle_button = document.createElement("div")
+    
+    //トグルチャイルド
+    const runcheck_span = document.createElement("span");
+    runcheck_span.textContent = "待機中...";
+    const runcheck_label =document.createElement("label");
+    runcheck_label.setAttribute("class", "toggle-switch");
+    //トグルチャイルド：ラベルのチャイルド
+    const runcheck_label_input = document.createElement("input");
+    runcheck_label_input.setAttribute("type", "checkbox");
+    runcheck_label_input.setAttribute("class", "toggle-input");
+    const runcheck_label_span = document.createElement("span");//ボタンのサークル
+    runcheck_label_span.setAttribute("class", "toggle-slider");
+    runcheck_label.appendChild(runcheck_label_input);
+    runcheck_label.appendChild(runcheck_label_span);
+
+    //トグルチャイルドを追加
+    run_toggle_button.appendChild(runcheck_span);
+    run_toggle_button.appendChild(runcheck_label);
+
+
+
+    /**
+```html
+<div class="run_check">
+    <span>実行中</span>
+    <label class="toggle-switch">
+        <input type="checkbox" class="toggle-input">
+        <span class="toggle-slider"></span>
+    </label>
+</div>
+```
+    */
     
     edit_button.textContent="Edit";
     delete_button.textContent="Delete";
@@ -151,9 +185,12 @@ function add_task(title, description,deadline){
     edit_button.setAttribute("class", "task_ope_button task_ope_button_edit");
     delete_button.setAttribute("class", "task_ope_button task_ope_button_delete");
     done_button.setAttribute("class", "task_ope_button task_ope_button_done");
+    run_toggle_button.setAttribute("class","task_ope_button run_check")
+
 
     const task_ope = document.createElement("div");
-    task_ope.setAttribute("class","task_ope")
+    task_ope.setAttribute("class","task_ope");
+    
     
     
     edit_button.addEventListener("click",()=>{
@@ -166,9 +203,11 @@ function add_task(title, description,deadline){
         task_done();
     });
 
+    task_ope.appendChild(run_toggle_button);
     task_ope.appendChild(edit_button);
     task_ope.appendChild(delete_button);
     task_ope.appendChild(done_button);
+
 
     task.appendChild(task_ope);
 
