@@ -1,0 +1,47 @@
+/* デフォルトのスタイルをリセット */
+.toggle-switch {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 20px;
+}
+
+.toggle-input {
+    display: none;
+}
+
+/* スライダーのスタイル */
+.toggle-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* チェックされた場合のスライダーのスタイル */
+.toggle-input:checked+.toggle-slider {
+    background-color: #3498db;
+}
+
+/* スライダーボールのスタイル */
+.toggle-slider::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: white;
+    left: 2px;
+    top: 1px;
+    transition: transform 0.3s ease;
+}
+
+/* チェックされた場合のスライダーボールのスタイル */
+.toggle-input:checked+.toggle-slider::before {
+    transform: translateX(20px);
+}
