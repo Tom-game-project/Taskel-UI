@@ -4,14 +4,13 @@ const addButton = document.getElementById("addBtn");
 const overlay = document.getElementById('add_task');
 
 
-openButton.addEventListener('click', () => {
-    overlay.style.display = 'flex';//ここで入力欄の初期化を行う
-    init_from();
+openButton.addEventListener('click', async () => {
+    overlay.style.display = 'flex';
+    init_form();//popupの初期化
+    await set_outside_onclick_event();
 });
 
-closeButton.addEventListener('click', () => {
-    overlay.style.display = 'none';
-});
+closeButton.addEventListener('click', onclose_popup);
 
 addButton.addEventListener('click',addbutton_onclick);
 
@@ -40,8 +39,8 @@ function set_hh_mm_options() {
 /**
 # formの初期化
  */
-function init_from(){
-
+function init_form(){
+    //on open popup window
     const ask_task_title = document.getElementById("ask_task_title");
     const ask_task_date = document.getElementById("ask_task_date");
     const select_hh = document.getElementById("hh");//この二つはデフォルトの入力が絶対にある
@@ -63,8 +62,28 @@ function init_from(){
 }
 
 
+
+//イベントのセッティング
+/**
+ * 
+ */
+
+function set_outside_onclick_event() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+
+            //New Task欄以外をタップしたりクリックしたりするのはクローズの操作と等価とみなす
+            document.addEventListener("click", onclick_outside);
+
+            resolve();
+        }, 100);  // 0.1秒後に非同期処理が完了
+    });
+}
+
 //#eventlistener
 //#on any event
+
+
 
 
 /**
@@ -108,8 +127,54 @@ function addbutton_onclick(){
             ask_task_title.value,
             ask_task_memo.value,
         );
-        overlay.style.display = 'none';//formを閉じる
+        onclose_popup();
     }
+}
+
+
+/**
+ * # 要素root内にある要素targetが含まれるかどうかを再帰的に探索する関数
+ * @param {object} root 
+ * @param {object} target 
+ * @returns {bool}
+ */
+function containsElement(root, target) {
+    if (root === target) {
+        return true;
+    }
+
+    for (const child of root.children) {
+        if (containsElement(child, target)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+/**
+ * # onclick_outside
+ * ## popupを開いているときpopup領域以外がクリックされたときの処理
+ * @param {*} event 
+ */
+function onclick_outside(event){
+    //範囲外をクリックされたかをチェックをする
+    const elem = document.getElementById("popup");
+    console.log(event.target);
+    if (event.target !== elem && !containsElement(elem,event.target)) {
+        console.log("outside");
+    }
+    //popup範囲外がクリックされたらpopupを閉じて終了する
+
+
+}
+
+/**
+ * # ポップアップが閉じられた時の処理
+ */
+function onclose_popup(){
+    overlay.style.display = 'none';
+    document.removeEventListener("click",onclick_outside);
 }
 
 
@@ -167,15 +232,15 @@ function add_task(title, description,deadline){
 
 
     /**
-```html
-<div class="run_check">
-    <span>実行中</span>
-    <label class="toggle-switch">
-        <input type="checkbox" class="toggle-input">
-        <span class="toggle-slider"></span>
-    </label>
-</div>
-```
+    ```html
+    <div class="run_check">
+        <span>実行中</span>
+        <label class="toggle-switch">
+            <input type="checkbox" class="toggle-input">
+            <span class="toggle-slider"></span>
+        </label>
+    </div>
+    ```
     */
     
     edit_button.textContent="Edit";
